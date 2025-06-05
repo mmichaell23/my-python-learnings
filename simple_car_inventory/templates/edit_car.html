@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Car</title>
+</head>
+<body>
+    <h1>Edit Car</h1>
+    <form action="/update_car/{{ car.id }}" method="POST">
+        <label>Make:</label><br>
+        <input type="text" name="make" value="{{ car.make }}" required><br><br>
+
+        <label>Model:</label><br>
+        <input type="text" name="model" value="{{ car.model }}" required><br><br>
+
+        <label>Year:</label><br>
+        <input type="number" name="year" value="{{ car.year }}" required><br><br>
+
+        <label>Description:</label><br>
+        <textarea name="description" required>{{ car.description }}</textarea><br><br>
+
+        <button type="submit">Update Car</button>
+    </form>
+    <a href="/cars">Cancel</a>
+</body>
+</html>

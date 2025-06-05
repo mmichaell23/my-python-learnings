@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create a Car</title>
+</head>
+<body>
+    <h1>Car Inventory</h1>
+    <form action="/car" method="POST">
+        <label>Make:</label><br>
+        <input type="text" name="make" required><br><br>
+
+        <label>Model:</label><br>
+        <input type="text" name="model" required><br><br>
+
+        <label>Year:</label><br>
+        <input type="number" name="year" required><br><br>
+
+        <label>Description:</label><br>
+        <textarea name="description" required></textarea><br><br>
+
+        <button type="submit">Add Car</button>
+    </form>
+
+    <hr>
+
+    <h2>Cars in Inventory</h2>
+    <ul>
+        {% for car in cars %}
+        <li>
+            <h3>{{ car.make }} {{ car.model }} ({{ car.year }})</h3>
+            <p>{{ car.description }}</p>
+            <a href="/edit/{{ car.id }}">Edit</a> |
+            <form action="/delete/{{ car.id }}" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

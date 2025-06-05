@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Cars</title>
+</head>
+<body>
+    <h1>Cars in Inventory</h1>
+    <a href="/index">Create New Car</a>
+    <ul>
+        {% for car in cars %}
+        <li>
+            <h2>{{ car.make }} {{ car.model }} ({{ car.year }})</h2>
+            <p>{{ car.description }}</p>
+            <form action="/delete/{{ car.id }}" method="POST" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+            <a href="/edit/{{ car.id }}">Edit</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/index">Return to Homepage</a>
+</body>
+</html>
