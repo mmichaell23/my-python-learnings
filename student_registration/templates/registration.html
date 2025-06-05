@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form action="/user" method="post">
+        <p><strong>Personal Information</strong></p>
+        Last Name: <input type="text" name="last_name"><br>
+        First Name: <input type="text" name="first_name"><br>
+        Middle Initial: <input type="text" name="middle_initial"><br>
+        Address: <textarea name="address"></textarea><br>
+        Birthday: <input type="date" name="birthday"><br>
+        Gender: 
+        <input type="radio" name="gender" value="Male"> Male 
+        <input type="radio" name="gender" value="Female"> Female<br>
+        Contact Number: <input type="text" name="contact"><br><br>
+
+        <p><strong>Educational Attainment</strong></p>
+        Elementary: <input type="text" name="elementary"><br>
+        Junior Highschool: <input type="text" name="junior_high"><br>
+        Senior Highschool: <input type="text" name="senior_high"><br>
+        Strand / Track:
+        <select name="strand">
+            <option value="ABM">ABM</option>
+            <option value="ICT">ICT</option>
+            <option value="GAS">GAS</option>
+            <option value="HUMSS">HUMSS</option>
+        </select><br>
+        College: <input type="text" name="college"><br>
+        Program: <input type="text" name="program"><br><br>
+
+        <input type="submit" value="Save">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
+
