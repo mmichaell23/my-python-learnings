@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/static/register.css">
+
+<h1>Register User</h1>
+<form method="POST" action="/insert_user">
+    Last Name: <input type="text" name="lname" placeholder="Enter your Last Name"><br><br>
+    First Name: <input type="text" name="fname" placeholder="Enter your First Name"><br><br>
+    Email Address: <input type="text" name="email" placeholder="Enter your Email Address"><br><br>
+    Username: <input type="text" name="usr" placeholder="Enter your Username"><br><br>
+    Password: <input type="text" name="pword" placeholder="Enter your Password"><br><br>
+    Confirm Password: <input type="text" name="cpword" placeholder="Confirm your Password"><br><br>
+    <input type="submit" value="Register">
+    <input type="reset" value="Reset">
+</form> 
+
+<form action="/login">
+    <input type="submit" value="Return to Login">
+</form>
+
+
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}

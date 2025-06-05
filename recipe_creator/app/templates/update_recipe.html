@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/static/update_recipe.css">
+
+<h1>Update Recipe!</h1>
+
+<form method="POST" action="/update_recipe_post/{{ recipe.id }}">
+    Recipe Name <br>
+    <input type="text" name="recipe_name_update" value="{{ recipe.name }}"><br><br>
+
+    Ingredients <br>
+    <textarea
+        name="ingredient_update"
+        class="form-control"
+        style="height:150px; width:300px; text-align:left; vertical-align:top;">{{ recipe.ingredient }}</textarea><br><br>
+
+    Cooking Tools Needed <br>
+    <textarea
+        name="cooking_tools_needed_update"
+        class="form-control"
+        style="height:150px; width:300px; text-align:left; vertical-align:top;">{{ recipe.cooking_tools }}</textarea><br><br>
+
+    Procedure <br>
+    <textarea
+        name="procedure_update"
+        class="form-control"
+        style="height:150px; width:300px; text-align:left; vertical-align:top;">{{ recipe.procedure }}</textarea><br><br>
+    <input type="submit" value="Update Recipe">
+    <input type="reset" value="Reset">
+</form>
+<a href="/dashboard">Return to Homepage</a>

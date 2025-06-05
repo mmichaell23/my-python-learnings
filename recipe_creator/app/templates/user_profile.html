@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/static/user_profile.css">
+<h1>My Profile</h1>
+
+<form method="POST" action="/user_profile_update/{{ user.id }}">
+    Last Name: <input type="text" name="lname_update" value="{{ user.lastname }}"><br><br>
+    First Name: <input type="text" name="fname_update" value="{{ user.firstname }}"><br><br>
+    Email Address: <input type="text" name="email_update" value="{{ user.email }}"><br><br>
+    Username: <input type="text" name="usr_update" value="{{ user.username }}"><br><br>
+    <input type="submit" value="Update">
+    <input type="reset" value="Reset">
+</form>
+
+<a href="/dashboard">Return to Homepage</a>

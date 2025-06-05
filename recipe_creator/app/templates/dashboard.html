@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="/static/dashboard.css">
+
+<h1>Welcome to the Dashboard, {{ session['usr'] }}</h1>
+
+<a href="/add_recipe"><button>Add Recipe</button></a>
+<a href="/user_profile/{{ current_user_id }}"><button>View Profile</button></a>
+
+<br><br>
+
+<table border="1">
+    <tr>
+        <th>Recipe ID</th>
+        <th>Recipe Name</th>
+        <th>Actions</th>
+    </tr>
+    {% for recipe in recipe_records %}
+        <tr>
+            <td>{{ recipe.id }}</td>
+            <td>{{ recipe.name }}</td>
+            <td>
+                <a href="/view_recipe/{{ recipe.id }}"><button>View</button></a>
+                <a href="/delete_recipe/{{ recipe.id }}"><button>Delete</button></a>
+                <a href="/update_recipe/{{ recipe.id }}"><button>Update</button></a>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+    {% if messages %}                            <!-- check if there are any messages -->
+        {% for message in messages %}            <!-- loop through the messages -->
+            <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<br>
+<a href="/logout">Logout</a>

@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/static/view_recipe.css">
+
+<h1>{{ recipe.name }}</h1>
+<h2>
+    <p>
+        Ingredients: <br>
+    </p> 
+    {{ recipe.ingredient }}
+</h2>
+<h2>
+    <p>
+        Cooking Tools Needed: <br>
+    </p> 
+    {{ recipe.cooking_tools }}
+</h2>
+<h2>
+    <p>
+        Procedure: <br>
+    </p> 
+    {{ recipe.procedure }}
+</h2>
+<a href="/dashboard">Return to Dashboard</a>
